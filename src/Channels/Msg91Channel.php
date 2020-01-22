@@ -41,6 +41,6 @@ class Msg91Channel
         }
         /** @var Msg91Message $message */
         $message = $notification->toMsg91($notifiable);
-        $this->client->sms($number, $message->message, $message->sender, $message->route, $message->country);
+        $this->client->sms($number, $message->message, $message->sender, $message->route, $message->country, $message->unicode);
     }
 }

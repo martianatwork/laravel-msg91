@@ -66,7 +66,7 @@ class Client
      * @param string|null $country
      * @return string|false
      */
-    public function sms($number, $message, $sender = null, $route = null, $country = null)
+    public function sms($number, $message, $sender = null, $route = null, $country = null, $unicode = 0)
     {
         if (is_string($message)) {
             $message = [[
@@ -81,6 +81,7 @@ class Client
                 'route' => $route ?? config('msg91.default_route'),
                 'sender' => $sender ?? config('msg91.default_sender'),
                 'sms' => $message,
+                'unicode' => $unicode
             ],
         ]);
         if ($response->getStatusCode() === 200) {

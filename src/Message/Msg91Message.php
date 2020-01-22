@@ -29,6 +29,11 @@ class Msg91Message
     public $sender;
 
     /**
+     * @var int
+     */
+    public $unicode;
+    
+    /**
      * @param string $message
      * @return $this
      */
@@ -63,6 +68,16 @@ class Msg91Message
     public function sender($sender)
     {
         $this->sender = $sender;
+        return $this;
+    }
+    
+    /**
+     * @param int $unicode
+     * @return $this
+     */
+    public function unicode($unicode)
+    {
+        $this->unicode = $unicode;
         return $this;
     }
 
